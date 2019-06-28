@@ -83,9 +83,18 @@
         <field name="res_model">academy.student</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+    <record model="ir.actions.act_window" id="act_student_calificaciones">
+        <field name="name">Calificaciones</field>
+        <field name="res_model">academy.calificacion</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
     <menuitem id="id_principal_academy" name="Odoo Academy"/><!-- MENU PRINCIPAL O PADRE -->
     <menuitem id="id_menu_student" parent="id_principal_academy" name="Registros" sequence="0"/>
     <menuitem id="id_menu_student_act" parent="id_menu_student" name="Estudiantes" action="act_student_academy" sequence="0"/>
+    <menuitem id="id_menu_config" parent="id_principal_academy" name="Configuración" sequence="1"/>
+    <menuitem id="id_menu_calificacion_act" parent="id_menu_config" name="Calificacion" action="act_student_calificaciones" sequence="1"/>
     </data>
 </openerp>
 
