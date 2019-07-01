@@ -31,6 +31,7 @@ class academy_student(models.Model):
                              ('done','Egresado'),], 'Estado',default="draft")
     age=fields.Integer('Edad', required=True)
     partner_id=fields.Many2one('res.partner','Escuela')
+    calificaciones_id=fields.One2many('academy.calificacion','student_id','Calificaciones')
 
 
    #_order = 'name'

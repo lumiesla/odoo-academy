@@ -67,6 +67,14 @@
                         </group>
                     </group>
                     <notebook>
+                        <page string="Calificaciones">
+                            <field name="calificaciones_id">
+                                <tree string="Calificaciones" editable="bottom">
+                                    <field name="name" required="1"/>
+                                    <field name="calificacion" required="1"/>
+                                </tree>
+                            </field>
+                        </page>
                         <page string="Comentarios">
                             <field name="notes"/>
                         </page>
