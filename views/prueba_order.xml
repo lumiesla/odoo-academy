@@ -28,74 +28,74 @@
     </record> -->
     
     <record model="ir.ui.view" id="tree_student_id">
-       <field name="name">academy.student.tree</field>
-       <field name="model">academy.student</field>
-       <field name="type">tree</field>
-       <field name="arch" type="xml">
+      <field name="name">academy.student.tree</field>
+      <field name="model">academy.student</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
             <tree string="Listado de Estudiantes">
-                <field name="name"/>
-                <field name="last_name"/>
-                <field name="create_date"/>
+              <field name="name"/>
+              <field name="last_name"/>
+              <field name="create_date"/>
 
             </tree>
            
-       </field>
+      </field>
     </record>
 
     <record model="ir.ui.view" id="academy_studen_form_id">
-       <field name="name">academy.student.form</field>
-       <field name="model">academy.student</field>
-       <field name="type">form</field>
-       <field name="arch" type="xml">
-            <form string="Formulario de registro">
-                <header>
-                    <field name="state" widget="statusbar"/>
-                </header>
+      <field name="name">academy.student.form</field>
+      <field name="model">academy.student</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+          <form string="Formulario de registro">
+              <header>
+                  <field name="state" widget="statusbar"/>
+              </header>
                 <sheet>
                     <group colspan="4">
                         <group>
-                            <field name="photo" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;photo&quot;, &quot;size&quot;: [90, 90]}"/>
+                          <field name="photo" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;photo&quot;, &quot;size&quot;: [90, 90]}"/>
                         </group>
                         <group>
-                            <field name="name" attrs="{'invisible':[('last_name','=',False)]}"/>
+                          <field name="name" attrs="{'invisible':[('last_name','=',False)]}"/>
                             <field name="last_name"/>                            
                         </group>
                         <group>
-                            <field name="active"/> 
-                            <field name="create_date"/>
-                            <field name="partner_id" domain="[('company_type','=','is_school')]"/>
+                          <field name="active"/> 
+                          <field name="create_date"/>
+                          <field name="partner_id" domain="[('company_type','=','is_school')]"/>
                         </group>
                     </group>
                     <notebook>
-                        <page string="Calificaciones">
-                            <field name="calificaciones_id">
-                                <tree string="Calificaciones" editable="bottom">
-                                    <field name="name" required="1"/>
-                                    <field name="calificacion" required="1"/>
-                                </tree>
-                            </field>
-                        </page>
-                        <page string="Comentarios">
-                            <field name="notes"/>
-                        </page>
+                      <page string="Calificaciones">
+                        <field name="calificaciones_ids">
+                          <tree string="Calificaciones" editable="bottom">
+                            <field name="name" required="1"/>
+                            <field name="calificacion" required="1"/>
+                          </tree>
+                        </field>
+                      </page>
+                      <page string="Comentarios">
+                        <field name="notes"/>
+                      </page>
                     </notebook>
                 </sheet>
 
-            </form>
+          </form>
            
-       </field>
+      </field>
     </record>   
 
     <record model="ir.actions.act_window" id="act_student_academy">
-        <field name="name">Registro del estudiante</field>
-        <field name="res_model">academy.student</field>
-        <field name="view_mode">tree,form</field>
+      <field name="name">Registro del estudiante</field>
+      <field name="res_model">academy.student</field>
+      <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="act_student_calificaciones">
-        <field name="name">Calificaciones</field>
-        <field name="res_model">academy.calificacion</field>
-        <field name="view_mode">tree,form</field>
+      <field name="name">Calificaciones</field>
+      <field name="res_model">academy.calificacion</field>
+      <field name="view_mode">tree,form</field>
     </record>
 
     <menuitem id="id_principal_academy" name="Odoo Academy"/><!-- MENU PRINCIPAL O PADRE -->
